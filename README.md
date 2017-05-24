@@ -1,4 +1,5 @@
 # morphism-zoo
+[![Build Status](https://travis-ci.org/vmchale/morphism-zoo.svg?branch=master)](https://travis-ci.org/vmchale/morphism-zoo)
 
 ## Benchmarks
 
