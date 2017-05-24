@@ -23,5 +23,5 @@ or, if you'd like a particular version of ghc:
 
 ### Conclusions
 
-Using recursion schemes correctly will get you the fastest code. Of course, this
-depends on the nature of the recursion: a fold is a fold is a catamorphism. 
+As it happens, there's not a *huge* difference between the implementations, but
+some stand out as bad.
