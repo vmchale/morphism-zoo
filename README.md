@@ -5,16 +5,21 @@
 This repository is for examples of recursion schemes, and benchmarks
 to compare them to other methods you might consider.
 
-### Results
+### Running the Benchmarks
 
-| GHC | Benchmark | Method | Time |
-| --- | --------- | ------ | ---- |
-| 8.0.2 | suffix | recursion schemes | 34.35 ns |
-| 8.0.2 | suffix | pattern matching v2 | 116.4 ns |
-| 8.0.2 | suffix | pattern matching v1 | 100.8 ns |
-| 8.0.2 | suffix | list comprehension | 38.84 ns |
+Simply clone this repo and install [stack](http://haskellstack.org). Then:
+
+```bash
+ $ stack bench
+```
+
+or, if you'd like a particular version of ghc:
+
+```bash
+ $ stack bench --stack-yaml stack-8.2.yaml
+```
 
 ### Conclusions
 
-Using recursion schemes correctly will get you the fastest code. Failing that,
-functoriality will also get you nice fusion.
+Using recursion schemes correctly will get you the fastest code. Of course, this
+depends on the nature of the recursion: a fold is a fold is a catamorphism. 

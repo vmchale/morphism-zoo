@@ -17,7 +17,6 @@ module Suffix ( suffix
               ) where
 
 import Data.Functor.Foldable
-import Data.Functor.Identity
 
 -- | This uses a hylomorphism
 suffixHylo :: [a] -> [[a]]
