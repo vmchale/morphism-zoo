@@ -3,7 +3,8 @@
 ## Benchmarks
 
 This repository is for examples of recursion schemes, and benchmarks
-to compare them to other methods you might consider.
+to compare them to other methods you might consider. You can find them under
+`bench8.0.txt` and `bench8.2.txt`.
 
 ### Running the Benchmarks
 
