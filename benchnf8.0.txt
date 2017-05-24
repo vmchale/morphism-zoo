@@ -1,0 +1,155 @@
+morphism-zoo-0.1.0.0: unregistering (local file changes: README.md bench/Bench.hs src/Suffix.hs test/Spec.hs)
+morphism-zoo-0.1.0.0: build (lib + bench)
+Preprocessing library morphism-zoo-0.1.0.0...
+[1 of 1] Compiling Suffix           ( src/Suffix.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Suffix.o )
+Preprocessing benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0...
+[1 of 1] Compiling Main             ( bench/Bench.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/morphism-zoo-bench/morphism-zoo-bench-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/morphism-zoo-bench/morphism-zoo-bench ...
+morphism-zoo-0.1.0.0: copy/register
+Installing library in
+/home/vanessa/programming/haskell/current/morphism-zoo/.stack-work/install/x86_64-linux/lts-8.15/8.0.2/lib/x86_64-linux-ghc-8.0.2/morphism-zoo-0.1.0.0-HNDyL80UI1U5X2Ljpg50Hu
+Registering morphism-zoo-0.1.0.0...
+morphism-zoo-0.1.0.0: benchmarks
+Running 1 benchmarks...
+Benchmark morphism-zoo-bench: RUNNING...
+benchmarking suffixes-short/suffix (paramorphism)
+time                 147.4 ns   (144.7 ns .. 152.1 ns)
+                     0.979 R²   (0.962 R² .. 0.993 R²)
+mean                 159.0 ns   (149.3 ns .. 170.9 ns)
+std dev              34.51 ns   (23.04 ns .. 43.02 ns)
+variance introduced by outliers: 98% (severely inflated)
+
+benchmarking suffixes-short/suffix (pattern matching)
+time                 119.0 ns   (118.2 ns .. 119.9 ns)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 118.9 ns   (118.2 ns .. 119.7 ns)
+std dev              2.299 ns   (1.847 ns .. 3.075 ns)
+variance introduced by outliers: 26% (moderately inflated)
+
+benchmarking suffixes-short/suffix (pattern matching v2)
+time                 158.2 ns   (156.8 ns .. 160.8 ns)
+                     0.998 R²   (0.996 R² .. 1.000 R²)
+mean                 157.2 ns   (156.2 ns .. 160.3 ns)
+std dev              5.249 ns   (2.303 ns .. 10.23 ns)
+variance introduced by outliers: 51% (severely inflated)
+
+benchmarking suffixes-short/suffix (pattern matching v3)
+time                 168.4 ns   (157.1 ns .. 176.7 ns)
+                     0.986 R²   (0.983 R² .. 0.993 R²)
+mean                 155.5 ns   (152.2 ns .. 161.1 ns)
+std dev              13.63 ns   (8.690 ns .. 18.19 ns)
+variance introduced by outliers: 88% (severely inflated)
+
+benchmarking suffixes-short/suffix (pattern matching ignore reverse)
+time                 139.6 ns   (137.2 ns .. 142.9 ns)
+                     0.998 R²   (0.996 R² .. 0.999 R²)
+mean                 140.2 ns   (138.2 ns .. 142.9 ns)
+std dev              7.463 ns   (5.870 ns .. 9.324 ns)
+variance introduced by outliers: 73% (severely inflated)
+
+benchmarking suffixes-short/suffix (list comprehension)
+time                 161.3 ns   (156.8 ns .. 167.7 ns)
+                     0.989 R²   (0.986 R² .. 0.993 R²)
+mean                 175.3 ns   (170.8 ns .. 179.6 ns)
+std dev              14.88 ns   (11.86 ns .. 17.16 ns)
+variance introduced by outliers: 87% (severely inflated)
+
+benchmarking suffixes-short/suffix (zipper)
+time                 241.3 ns   (239.5 ns .. 243.4 ns)
+                     0.999 R²   (0.999 R² .. 0.999 R²)
+mean                 247.4 ns   (244.2 ns .. 251.1 ns)
+std dev              10.95 ns   (9.468 ns .. 13.52 ns)
+variance introduced by outliers: 64% (severely inflated)
+
+benchmarking suffixes-short/suffix (functoriality)
+time                 182.1 ns   (174.6 ns .. 187.0 ns)
+                     0.990 R²   (0.987 R² .. 0.994 R²)
+mean                 168.4 ns   (164.5 ns .. 173.5 ns)
+std dev              15.52 ns   (13.16 ns .. 18.30 ns)
+variance introduced by outliers: 89% (severely inflated)
+
+benchmarking suffixes-short/suffix (pattern matching done right)
+time                 147.4 ns   (145.6 ns .. 149.8 ns)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 146.5 ns   (145.6 ns .. 148.4 ns)
+std dev              4.206 ns   (2.021 ns .. 7.898 ns)
+variance introduced by outliers: 43% (moderately inflated)
+
+benchmarking suffixes-short/suffix (hylophorphism)
+time                 109.5 ns   (106.9 ns .. 113.4 ns)
+                     0.990 R²   (0.988 R² .. 0.993 R²)
+mean                 121.3 ns   (117.4 ns .. 124.6 ns)
+std dev              11.63 ns   (10.17 ns .. 12.63 ns)
+variance introduced by outliers: 90% (severely inflated)
+
+benchmarking suffixes-long/suffix (paramorphism)
+time                 3.606 μs   (3.459 μs .. 3.705 μs)
+                     0.991 R²   (0.989 R² .. 0.994 R²)
+mean                 3.325 μs   (3.239 μs .. 3.422 μs)
+std dev              297.8 ns   (252.3 ns .. 340.4 ns)
+variance introduced by outliers: 85% (severely inflated)
+
+benchmarking suffixes-long/suffix (pattern matching)
+time                 3.716 μs   (3.697 μs .. 3.742 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 3.714 μs   (3.704 μs .. 3.728 μs)
+std dev              40.35 ns   (32.17 ns .. 54.08 ns)
+
+benchmarking suffixes-long/suffix (pattern matching v2)
+time                 7.546 μs   (7.290 μs .. 7.890 μs)
+                     0.987 R²   (0.984 R² .. 0.991 R²)
+mean                 8.334 μs   (8.068 μs .. 8.550 μs)
+std dev              855.5 ns   (747.0 ns .. 923.5 ns)
+variance introduced by outliers: 87% (severely inflated)
+
+benchmarking suffixes-long/suffix (pattern matching v3)
+time                 8.829 μs   (8.794 μs .. 8.858 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 8.859 μs   (8.826 μs .. 8.903 μs)
+std dev              132.8 ns   (106.0 ns .. 175.2 ns)
+variance introduced by outliers: 12% (moderately inflated)
+
+benchmarking suffixes-long/suffix (pattern matching ignore reverse)
+time                 3.365 μs   (3.222 μs .. 3.534 μs)
+                     0.991 R²   (0.989 R² .. 0.997 R²)
+mean                 3.530 μs   (3.459 μs .. 3.574 μs)
+std dev              187.2 ns   (116.8 ns .. 265.3 ns)
+variance introduced by outliers: 66% (severely inflated)
+
+benchmarking suffixes-long/suffix (list comprehension)
+time                 5.913 μs   (5.853 μs .. 5.944 μs)
+                     0.997 R²   (0.995 R² .. 0.998 R²)
+mean                 5.548 μs   (5.375 μs .. 5.698 μs)
+std dev              549.7 ns   (486.5 ns .. 595.3 ns)
+variance introduced by outliers: 87% (severely inflated)
+
+benchmarking suffixes-long/suffix (zipper)
+time                 5.928 μs   (5.918 μs .. 5.948 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 5.960 μs   (5.931 μs .. 6.068 μs)
+std dev              172.1 ns   (40.56 ns .. 357.3 ns)
+variance introduced by outliers: 35% (moderately inflated)
+
+benchmarking suffixes-long/suffix (functoriality)
+time                 5.572 μs   (5.266 μs .. 5.771 μs)
+                     0.988 R²   (0.985 R² .. 0.992 R²)
+mean                 5.202 μs   (5.059 μs .. 5.370 μs)
+std dev              533.1 ns   (451.1 ns .. 580.6 ns)
+variance introduced by outliers: 87% (severely inflated)
+
+benchmarking suffixes-long/suffix (pattern matching done right)
+time                 3.726 μs   (3.704 μs .. 3.747 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 3.725 μs   (3.706 μs .. 3.760 μs)
+std dev              83.69 ns   (53.83 ns .. 146.1 ns)
+variance introduced by outliers: 25% (moderately inflated)
+
+benchmarking suffixes-long/suffix (hylophorphism)
+time                 2.884 μs   (2.825 μs .. 2.983 μs)
+                     0.989 R²   (0.985 R² .. 0.992 R²)
+mean                 3.227 μs   (3.124 μs .. 3.309 μs)
+std dev              325.6 ns   (278.8 ns .. 350.1 ns)
+variance introduced by outliers: 88% (severely inflated)
+
+Benchmark morphism-zoo-bench: FINISH
+Completed 2 action(s).
