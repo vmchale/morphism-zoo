@@ -33,3 +33,6 @@ main = hspec $ do
     describe "suffixHylo" $ do
         parallel $ it "agrees with suffixZipper" $
             property $ \s -> suffixHylo s == (suffixZipper s :: [String])
+    describe "suffixPattern4" $ do
+        parallel $ it "agrees with suffixZipper" $
+            property $ \s -> suffixPattern4 s == (suffixHylo s :: [String])

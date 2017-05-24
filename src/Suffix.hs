@@ -14,6 +14,7 @@ module Suffix ( suffix
               , suffixPatternRev
               , suffixZipper
               , suffixHylo
+              , suffixPattern4
               ) where
 
 import Data.Functor.Foldable
@@ -21,6 +22,12 @@ import Data.Functor.Foldable
 -- | This uses a hylomorphism
 suffixHylo :: [a] -> [[a]]
 suffixHylo = hylo algebra coalgebra . drop 1
+
+-- | Another one, suggested from online
+suffixPattern4 :: [a] -> [[a]]
+suffixPattern4 []     = []
+suffixPattern4 [_]    = []
+suffixPattern4 (_:xs) = xs : suffixPattern xs
 
 algebra :: ListF [a] [[a]] -> [[a]]
 algebra Nil         = []
