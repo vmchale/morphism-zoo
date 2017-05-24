@@ -1,125 +1,177 @@
+WARNING: Ignoring out of range dependency (allow-newer enabled): base-4.10.0.0. unix requires: >=4.5 && <4.10
+WARNING: Ignoring out of range dependency (allow-newer enabled): base-4.10.0.0. vector requires: >=4.3 && <4.10
+WARNING: Ignoring out of range dependency (allow-newer enabled): template-haskell-2.12.0.0. aeson requires: >=2.7 && <2.12
+morphism-zoo-0.1.0.0: unregistering (local file changes: morphism-zoo.cabal)
+morphism-zoo-0.1.0.0: configure (lib + bench)
+Configuring morphism-zoo-0.1.0.0...
+Warning:
+    This package indirectly depends on multiple versions of the same package. This is very likely to cause a compile failure.
+      package text (text-1.2.2.1-1vF1XzOgF2850OjdNyzMpt) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package stm (stm-2.4.4.1-H7j4zZObh5z6Y14qwgJKZG) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package parallel (parallel-3.2.1.1-CWBtp9acyPZDojI08gniUT) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package monad-par (monad-par-0.3.4.8-12jYK9XDAc76LL9gC7abM5) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package integer-logarithms (integer-logarithms-1.0.1-ACNvwByTMOOIj0Hpv4s1Aq) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package deepseq (deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package containers (containers-0.5.7.1-Ht1uG6WFVZv6qpnkdI6atU) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package cereal (cereal-0.5.4.0-7uCTTRcFYsv509nfqfSwdb) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package cassava (cassava-0.4.5.1-GyLz2DwXAD637ygsFQdkAJ) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package binary (binary-0.8.3.0-4zGDlJ61KgJENdfyvO2fcX) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package attoparsec (attoparsec-0.13.1.0-HFkSyMl46ajBFLqqY5jqH1) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package abstract-deque (abstract-deque-0.3-27y9yDl2irAKD0mj357P5Z) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
+      package deepseq (deepseq-1.4.3.0) requires array-0.5.1.2
+      package pretty (pretty-1.1.3.3) requires deepseq-1.4.3.0
+      package vector (vector-0.11.0.0-AGioRPjO0amCmh8055gjs3) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package unordered-containers (unordered-containers-0.2.8.0-DB2h2dAjcxWKuxl7U0vBTQ) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package time (time-1.6.0.1-GCkUfsA6QMb9R20DQnghMm) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package text (text-1.2.2.1-1vF1XzOgF2850OjdNyzMpt) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package tagged (tagged-0.8.5-BUzaewEHVkO9T7oquLPkMz) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package statistics (statistics-0.13.3.0-1BUvIv3N2Ja3njc6Hc6mpX) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package scientific (scientific-0.3.4.12-H8JwynqAGWWAz3v1siLZ6y) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package process (process-1.4.3.0-Kx9pLxuCAQz6S6svVNfXzM) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package parallel (parallel-3.2.1.1-CWBtp9acyPZDojI08gniUT) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package monad-par-extras (monad-par-extras-0.3.3-6czzoWKZZOaCA1gvjJKGRL) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package monad-par (monad-par-0.3.4.8-12jYK9XDAc76LL9gC7abM5) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package math-functions (math-functions-0.2.1.0-4LyVIFHGfOnDS9tqPljilC) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package hashable (hashable-1.2.6.0-7gQOcfoHfO1H0vwWIW9J1J) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package dlist (dlist-0.8.0.2-KVpr4BwcobtFCxTHWSupZ4) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package criterion (criterion-1.1.4.0-a0r5BHIdZTCYKqgUxca8v) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package containers (containers-0.5.7.1-Ht1uG6WFVZv6qpnkdI6atU) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package cassava (cassava-0.4.5.1-GyLz2DwXAD637ygsFQdkAJ) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package bytestring (bytestring-0.10.8.1-8JjfMsvwvtq2YQjRK3T3xw) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package blaze-builder (blaze-builder-0.4.0.2-7RDe126g4vSCUT8IdJVwXg) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package attoparsec (attoparsec-0.13.1.0-HFkSyMl46ajBFLqqY5jqH1) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package aeson (aeson-1.0.2.1-1dA1TOv0GWb8UzOlquyfxS) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+      package abstract-par (abstract-par-0.3.3-3kPFxlm5vSKFP0mvoIxlqC) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
+morphism-zoo-0.1.0.0: build (lib + bench)
+Preprocessing library for morphism-zoo-0.1.0.0..
+Building library for morphism-zoo-0.1.0.0..
+Preprocessing benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0..
+Building benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0..
+morphism-zoo-0.1.0.0: copy/register
+Installing library in /home/vanessa/programming/haskell/current/morphism-zoo/.stack-work/install/x86_64-linux/lts-8.15/8.2.0.20170507/lib/x86_64-linux-ghc-8.2.0.20170507/morphism-zoo-0.1.0.0-ASUcodgNj0tIzLBhjYr5
+Registering library for morphism-zoo-0.1.0.0..
+morphism-zoo-0.1.0.0: benchmarks
+Running 1 benchmarks...
+Benchmark morphism-zoo-bench: RUNNING...
 benchmarking suffixes-short/suffix (recursion schemes)
-time                 28.46 ns   (27.07 ns .. 30.11 ns)
-                     0.985 R²   (0.976 R² .. 0.997 R²)
-mean                 28.64 ns   (27.63 ns .. 31.22 ns)
-std dev              5.128 ns   (2.600 ns .. 8.825 ns)
-variance introduced by outliers: 97% (severely inflated)
+time                 17.28 ns   (17.05 ns .. 17.54 ns)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 17.28 ns   (17.16 ns .. 17.42 ns)
+std dev              437.4 ps   (343.7 ps .. 524.6 ps)
+variance introduced by outliers: 41% (moderately inflated)
 
 benchmarking suffixes-short/suffix (pattern matching)
-time                 81.50 ns   (78.03 ns .. 85.21 ns)
-                     0.986 R²   (0.976 R² .. 0.992 R²)
-mean                 89.87 ns   (80.72 ns .. 105.6 ns)
-std dev              40.66 ns   (13.38 ns .. 68.91 ns)
-variance introduced by outliers: 100% (severely inflated)
+time                 53.19 ns   (53.06 ns .. 53.40 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 53.25 ns   (53.07 ns .. 53.59 ns)
+std dev              768.1 ps   (492.9 ps .. 1.457 ns)
+variance introduced by outliers: 17% (moderately inflated)
 
 benchmarking suffixes-short/suffix (pattern matching v2)
-time                 86.19 ns   (82.91 ns .. 90.29 ns)
-                     0.991 R²   (0.986 R² .. 0.997 R²)
-mean                 88.39 ns   (85.28 ns .. 99.31 ns)
-std dev              19.50 ns   (6.653 ns .. 40.01 ns)
-variance introduced by outliers: 98% (severely inflated)
+time                 57.82 ns   (57.08 ns .. 58.67 ns)
+                     0.998 R²   (0.996 R² .. 0.999 R²)
+mean                 57.85 ns   (57.02 ns .. 60.03 ns)
+std dev              4.088 ns   (1.845 ns .. 7.501 ns)
+variance introduced by outliers: 84% (severely inflated)
 
 benchmarking suffixes-short/suffix (pattern matching v3)
-time                 80.85 ns   (77.96 ns .. 83.68 ns)
-                     0.990 R²   (0.985 R² .. 0.995 R²)
-mean                 81.14 ns   (77.79 ns .. 91.31 ns)
-std dev              17.78 ns   (7.532 ns .. 37.72 ns)
-variance introduced by outliers: 98% (severely inflated)
+time                 60.30 ns   (57.36 ns .. 62.49 ns)
+                     0.987 R²   (0.983 R² .. 0.991 R²)
+mean                 57.54 ns   (55.51 ns .. 61.57 ns)
+std dev              9.587 ns   (6.639 ns .. 13.90 ns)
+variance introduced by outliers: 97% (severely inflated)
 
 benchmarking suffixes-short/suffix (pattern matching ignore reverse)
-time                 42.54 ns   (41.61 ns .. 43.53 ns)
-                     0.995 R²   (0.992 R² .. 0.997 R²)
-mean                 43.90 ns   (42.24 ns .. 48.17 ns)
-std dev              9.130 ns   (4.184 ns .. 17.82 ns)
-variance introduced by outliers: 98% (severely inflated)
+time                 35.54 ns   (35.42 ns .. 35.70 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 35.46 ns   (35.39 ns .. 35.57 ns)
+std dev              297.2 ps   (201.4 ps .. 508.9 ps)
 
 benchmarking suffixes-short/suffix (list comprehension)
-time                 31.76 ns   (30.92 ns .. 32.53 ns)
-                     0.995 R²   (0.993 R² .. 0.997 R²)
-mean                 31.65 ns   (31.06 ns .. 32.44 ns)
-std dev              2.437 ns   (1.921 ns .. 3.141 ns)
-variance introduced by outliers: 87% (severely inflated)
+time                 21.58 ns   (20.94 ns .. 22.48 ns)
+                     0.990 R²   (0.987 R² .. 0.993 R²)
+mean                 23.64 ns   (22.86 ns .. 24.26 ns)
+std dev              2.391 ns   (2.105 ns .. 2.546 ns)
+variance introduced by outliers: 92% (severely inflated)
 
 benchmarking suffixes-short/suffix (zipper)
-time                 50.82 ns   (49.18 ns .. 52.23 ns)
-                     0.995 R²   (0.992 R² .. 0.997 R²)
-mean                 50.71 ns   (49.77 ns .. 51.59 ns)
-std dev              3.288 ns   (2.633 ns .. 4.099 ns)
-variance introduced by outliers: 81% (severely inflated)
+time                 32.38 ns   (32.31 ns .. 32.48 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 32.38 ns   (32.33 ns .. 32.45 ns)
+std dev              201.1 ps   (160.7 ps .. 265.6 ps)
 
 benchmarking suffixes-short/suffix (functoriality)
-time                 39.58 ns   (36.80 ns .. 42.80 ns)
-                     0.969 R²   (0.953 R² .. 0.985 R²)
-mean                 43.34 ns   (40.89 ns .. 49.81 ns)
-std dev              11.90 ns   (6.426 ns .. 21.44 ns)
-variance introduced by outliers: 99% (severely inflated)
+time                 23.81 ns   (22.74 ns .. 25.28 ns)
+                     0.987 R²   (0.983 R² .. 0.995 R²)
+mean                 25.44 ns   (24.82 ns .. 25.99 ns)
+std dev              1.998 ns   (1.387 ns .. 2.924 ns)
+variance introduced by outliers: 87% (severely inflated)
 
 benchmarking suffixes-short/suffix (hylophorphism)
-time                 21.08 ns   (20.68 ns .. 21.55 ns)
-                     0.997 R²   (0.994 R² .. 0.999 R²)
-mean                 21.98 ns   (21.26 ns .. 24.70 ns)
-std dev              4.340 ns   (903.9 ps .. 9.009 ns)
-variance introduced by outliers: 98% (severely inflated)
+time                 17.52 ns   (16.97 ns .. 17.88 ns)
+                     0.992 R²   (0.989 R² .. 0.995 R²)
+mean                 16.02 ns   (15.51 ns .. 16.54 ns)
+std dev              1.683 ns   (1.453 ns .. 1.806 ns)
+variance introduced by outliers: 92% (severely inflated)
 
 benchmarking suffixes-long/suffix (recursion schemes)
-time                 29.15 ns   (28.16 ns .. 30.12 ns)
-                     0.990 R²   (0.979 R² .. 0.996 R²)
-mean                 30.15 ns   (28.04 ns .. 39.78 ns)
-std dev              12.51 ns   (2.380 ns .. 28.19 ns)
-variance introduced by outliers: 100% (severely inflated)
+time                 21.11 ns   (21.10 ns .. 21.14 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 21.17 ns   (21.11 ns .. 21.36 ns)
+std dev              311.2 ps   (71.32 ps .. 647.0 ps)
+variance introduced by outliers: 18% (moderately inflated)
 
 benchmarking suffixes-long/suffix (pattern matching)
-time                 722.0 ns   (697.4 ns .. 744.7 ns)
-                     0.993 R²   (0.989 R² .. 0.996 R²)
-mean                 696.6 ns   (677.3 ns .. 716.1 ns)
-std dev              59.24 ns   (49.23 ns .. 72.72 ns)
-variance introduced by outliers: 86% (severely inflated)
+time                 401.5 ns   (397.1 ns .. 409.3 ns)
+                     0.993 R²   (0.990 R² .. 0.996 R²)
+mean                 446.4 ns   (433.4 ns .. 461.0 ns)
+std dev              49.43 ns   (48.79 ns .. 50.15 ns)
+variance introduced by outliers: 92% (severely inflated)
 
 benchmarking suffixes-long/suffix (pattern matching v2)
-time                 912.6 ns   (892.6 ns .. 933.4 ns)
-                     0.990 R²   (0.974 R² .. 0.998 R²)
-mean                 979.7 ns   (901.3 ns .. 1.185 μs)
-std dev              451.5 ns   (46.92 ns .. 866.2 ns)
-variance introduced by outliers: 99% (severely inflated)
+time                 593.5 ns   (593.1 ns .. 593.9 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 593.8 ns   (593.5 ns .. 594.1 ns)
+std dev              984.5 ps   (838.1 ps .. 1.179 ns)
 
 benchmarking suffixes-long/suffix (pattern matching v3)
-time                 790.9 ns   (747.1 ns .. 829.8 ns)
-                     0.984 R²   (0.979 R² .. 0.990 R²)
-mean                 835.5 ns   (793.0 ns .. 966.8 ns)
-std dev              232.0 ns   (93.35 ns .. 459.6 ns)
-variance introduced by outliers: 99% (severely inflated)
+time                 580.9 ns   (571.6 ns .. 586.6 ns)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 585.6 ns   (581.2 ns .. 587.2 ns)
+std dev              8.474 ns   (1.571 ns .. 18.63 ns)
+variance introduced by outliers: 15% (moderately inflated)
 
 benchmarking suffixes-long/suffix (pattern matching ignore reverse)
-time                 317.6 ns   (312.8 ns .. 322.4 ns)
-                     0.996 R²   (0.994 R² .. 0.998 R²)
-mean                 311.9 ns   (303.0 ns .. 321.7 ns)
-std dev              30.31 ns   (25.30 ns .. 37.55 ns)
-variance introduced by outliers: 90% (severely inflated)
+time                 174.1 ns   (173.8 ns .. 174.3 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 174.2 ns   (173.7 ns .. 174.9 ns)
+std dev              1.874 ns   (1.459 ns .. 2.465 ns)
 
 benchmarking suffixes-long/suffix (list comprehension)
-time                 109.5 ns   (107.1 ns .. 113.5 ns)
-                     0.992 R²   (0.989 R² .. 0.995 R²)
-mean                 121.0 ns   (117.0 ns .. 137.4 ns)
-std dev              24.40 ns   (7.936 ns .. 53.72 ns)
-variance introduced by outliers: 98% (severely inflated)
+time                 87.38 ns   (87.26 ns .. 87.50 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 87.36 ns   (87.18 ns .. 87.55 ns)
+std dev              632.8 ps   (520.8 ps .. 803.0 ps)
 
 benchmarking suffixes-long/suffix (zipper)
-time                 105.8 ns   (103.8 ns .. 108.2 ns)
-                     0.997 R²   (0.996 R² .. 0.999 R²)
-mean                 106.7 ns   (104.4 ns .. 110.8 ns)
-std dev              10.45 ns   (5.480 ns .. 17.61 ns)
-variance introduced by outliers: 91% (severely inflated)
+time                 95.64 ns   (89.91 ns .. 100.7 ns)
+                     0.988 R²   (0.986 R² .. 0.994 R²)
+mean                 89.91 ns   (88.33 ns .. 93.06 ns)
+std dev              6.664 ns   (3.988 ns .. 9.467 ns)
+variance introduced by outliers: 84% (severely inflated)
 
 benchmarking suffixes-long/suffix (functoriality)
-time                 126.1 ns   (123.0 ns .. 128.6 ns)
-                     0.994 R²   (0.991 R² .. 0.997 R²)
-mean                 117.6 ns   (114.9 ns .. 122.1 ns)
-std dev              11.02 ns   (10.09 ns .. 12.52 ns)
-variance introduced by outliers: 90% (severely inflated)
+time                 110.0 ns   (110.0 ns .. 110.0 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 110.0 ns   (110.0 ns .. 110.1 ns)
+std dev              157.5 ps   (83.59 ps .. 308.1 ps)
 
 benchmarking suffixes-long/suffix (hylophorphism)
-time                 24.70 ns   (24.23 ns .. 25.17 ns)
-                     0.996 R²   (0.993 R² .. 0.998 R²)
-mean                 25.65 ns   (24.62 ns .. 28.70 ns)
-std dev              5.949 ns   (1.279 ns .. 11.25 ns)
-variance introduced by outliers: 99% (severely inflated)
+time                 15.55 ns   (15.04 ns .. 16.36 ns)
+                     0.989 R²   (0.987 R² .. 0.992 R²)
+mean                 16.83 ns   (16.38 ns .. 17.12 ns)
+std dev              1.284 ns   (990.0 ps .. 1.554 ns)
+variance introduced by outliers: 87% (severely inflated)
+
+Benchmark morphism-zoo-bench: FINISH
+Completed 2 action(s).
