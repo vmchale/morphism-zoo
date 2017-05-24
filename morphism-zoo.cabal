@@ -20,7 +20,6 @@ library
   exposed-modules:     Suffix
   build-depends:       base >= 4.7 && < 5
                      , recursion-schemes
-                     , composition
   default-language:    Haskell2010
 
 test-suite morphism-zoo-test
