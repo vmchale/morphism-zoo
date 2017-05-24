@@ -11,7 +11,6 @@ module Suffix ( suffix
               , suffixList
               , suffixFunctor
               , suffixPattern3
-              , suffixPatternRev
               , suffixZipper
               , suffixHylo
               , suffixPattern4
@@ -51,13 +50,6 @@ pseudoalgebra (Cons _ x) = uncurry go $ x
 -- | This uses pattern matching, and reverses the result at the end.
 suffixPattern :: [a] -> [[a]]
 suffixPattern x = reverse $ curry (snd . go) x mempty
-    where go ((x:xs), suffixes) = go (xs, if not $ null xs then xs:suffixes else suffixes)
-          go (_, suffixes)      = ([], suffixes)
-
--- | This uses pattern matching, and ignore the fact that everything is backwards. 
--- It's included in the benchmark to show the problem is pattern matching itself.
-suffixPatternRev :: [a] -> [[a]]
-suffixPatternRev x = curry (snd . go) x mempty
     where go ((x:xs), suffixes) = go (xs, if not $ null xs then xs:suffixes else suffixes)
           go (_, suffixes)      = ([], suffixes)
 

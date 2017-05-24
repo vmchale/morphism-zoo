@@ -24,4 +24,6 @@ or, if you'd like a particular version of ghc:
 ### Conclusions
 
 As it happens, there's not a *huge* difference between the implementations, but
-some stand out as bad.
+some do stand out as bad. Recursion schemes remain the fastest, but only for ghc
+8.0.2. Moreover, other methods gain some of the speed back when they are allowed
+to use multiple threads.
