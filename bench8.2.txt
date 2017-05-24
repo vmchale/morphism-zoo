@@ -1,58 +1,3 @@
-WARNING: Ignoring out of range dependency (allow-newer enabled): base-4.10.0.0. unix requires: >=4.5 && <4.10
-WARNING: Ignoring out of range dependency (allow-newer enabled): base-4.10.0.0. vector requires: >=4.3 && <4.10
-WARNING: Ignoring out of range dependency (allow-newer enabled): template-haskell-2.12.0.0. aeson requires: >=2.7 && <2.12
-morphism-zoo-0.1.0.0: unregistering (local file changes: morphism-zoo.cabal)
-morphism-zoo-0.1.0.0: configure (lib + bench)
-Configuring morphism-zoo-0.1.0.0...
-Warning:
-    This package indirectly depends on multiple versions of the same package. This is very likely to cause a compile failure.
-      package text (text-1.2.2.1-1vF1XzOgF2850OjdNyzMpt) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package stm (stm-2.4.4.1-H7j4zZObh5z6Y14qwgJKZG) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package parallel (parallel-3.2.1.1-CWBtp9acyPZDojI08gniUT) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package monad-par (monad-par-0.3.4.8-12jYK9XDAc76LL9gC7abM5) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package integer-logarithms (integer-logarithms-1.0.1-ACNvwByTMOOIj0Hpv4s1Aq) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package deepseq (deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package containers (containers-0.5.7.1-Ht1uG6WFVZv6qpnkdI6atU) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package cereal (cereal-0.5.4.0-7uCTTRcFYsv509nfqfSwdb) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package cassava (cassava-0.4.5.1-GyLz2DwXAD637ygsFQdkAJ) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package binary (binary-0.8.3.0-4zGDlJ61KgJENdfyvO2fcX) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package attoparsec (attoparsec-0.13.1.0-HFkSyMl46ajBFLqqY5jqH1) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package abstract-deque (abstract-deque-0.3-27y9yDl2irAKD0mj357P5Z) requires array-0.5.1.1-GY727hI6Ijn93DbMtfRl1D
-      package deepseq (deepseq-1.4.3.0) requires array-0.5.1.2
-      package pretty (pretty-1.1.3.3) requires deepseq-1.4.3.0
-      package vector (vector-0.11.0.0-AGioRPjO0amCmh8055gjs3) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package unordered-containers (unordered-containers-0.2.8.0-DB2h2dAjcxWKuxl7U0vBTQ) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package time (time-1.6.0.1-GCkUfsA6QMb9R20DQnghMm) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package text (text-1.2.2.1-1vF1XzOgF2850OjdNyzMpt) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package tagged (tagged-0.8.5-BUzaewEHVkO9T7oquLPkMz) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package statistics (statistics-0.13.3.0-1BUvIv3N2Ja3njc6Hc6mpX) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package scientific (scientific-0.3.4.12-H8JwynqAGWWAz3v1siLZ6y) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package process (process-1.4.3.0-Kx9pLxuCAQz6S6svVNfXzM) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package parallel (parallel-3.2.1.1-CWBtp9acyPZDojI08gniUT) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package monad-par-extras (monad-par-extras-0.3.3-6czzoWKZZOaCA1gvjJKGRL) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package monad-par (monad-par-0.3.4.8-12jYK9XDAc76LL9gC7abM5) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package math-functions (math-functions-0.2.1.0-4LyVIFHGfOnDS9tqPljilC) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package hashable (hashable-1.2.6.0-7gQOcfoHfO1H0vwWIW9J1J) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package dlist (dlist-0.8.0.2-KVpr4BwcobtFCxTHWSupZ4) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package criterion (criterion-1.1.4.0-a0r5BHIdZTCYKqgUxca8v) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package containers (containers-0.5.7.1-Ht1uG6WFVZv6qpnkdI6atU) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package cassava (cassava-0.4.5.1-GyLz2DwXAD637ygsFQdkAJ) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package bytestring (bytestring-0.10.8.1-8JjfMsvwvtq2YQjRK3T3xw) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package blaze-builder (blaze-builder-0.4.0.2-7RDe126g4vSCUT8IdJVwXg) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package attoparsec (attoparsec-0.13.1.0-HFkSyMl46ajBFLqqY5jqH1) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package aeson (aeson-1.0.2.1-1dA1TOv0GWb8UzOlquyfxS) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-      package abstract-par (abstract-par-0.3.3-3kPFxlm5vSKFP0mvoIxlqC) requires deepseq-1.4.3.0-LaL5sFTorWY4THZxITXNDC
-morphism-zoo-0.1.0.0: build (lib + bench)
-Preprocessing library for morphism-zoo-0.1.0.0..
-Building library for morphism-zoo-0.1.0.0..
-Preprocessing benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0..
-Building benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0..
-morphism-zoo-0.1.0.0: copy/register
-Installing library in /home/vanessa/programming/haskell/current/morphism-zoo/.stack-work/install/x86_64-linux/lts-8.15/8.2.0.20170507/lib/x86_64-linux-ghc-8.2.0.20170507/morphism-zoo-0.1.0.0-ASUcodgNj0tIzLBhjYr5
-Registering library for morphism-zoo-0.1.0.0..
-morphism-zoo-0.1.0.0: benchmarks
-Running 1 benchmarks...
-Benchmark morphism-zoo-bench: RUNNING...
 benchmarking suffixes-short/suffix (recursion schemes)
 time                 17.28 ns   (17.05 ns .. 17.54 ns)
                      0.999 R²   (0.998 R² .. 1.000 R²)
@@ -172,6 +117,3 @@ time                 15.55 ns   (15.04 ns .. 16.36 ns)
 mean                 16.83 ns   (16.38 ns .. 17.12 ns)
 std dev              1.284 ns   (990.0 ps .. 1.554 ns)
 variance introduced by outliers: 87% (severely inflated)
-
-Benchmark morphism-zoo-bench: FINISH
-Completed 2 action(s).

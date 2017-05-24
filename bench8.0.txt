@@ -1,17 +1,3 @@
-morphism-zoo-0.1.0.0: unregistering (local file changes: .travis.yml README.md morphism-zoo.cabal)
-morphism-zoo-0.1.0.0: configure (lib + bench)
-Configuring morphism-zoo-0.1.0.0...
-morphism-zoo-0.1.0.0: build (lib + bench)
-Preprocessing library morphism-zoo-0.1.0.0...
-Preprocessing benchmark 'morphism-zoo-bench' for morphism-zoo-0.1.0.0...
-Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/morphism-zoo-bench/morphism-zoo-bench ...
-morphism-zoo-0.1.0.0: copy/register
-Installing library in
-/home/vanessa/programming/haskell/current/morphism-zoo/.stack-work/install/x86_64-linux/lts-8.15/8.0.2/lib/x86_64-linux-ghc-8.0.2/morphism-zoo-0.1.0.0-HNDyL80UI1U5X2Ljpg50Hu
-Registering morphism-zoo-0.1.0.0...
-morphism-zoo-0.1.0.0: benchmarks
-Running 1 benchmarks...
-Benchmark morphism-zoo-bench: RUNNING...
 benchmarking suffixes-short/suffix (recursion schemes)
 time                 20.66 ns   (19.43 ns .. 21.76 ns)
                      0.987 R²   (0.986 R² .. 0.993 R²)
@@ -135,6 +121,3 @@ time                 18.72 ns   (18.28 ns .. 19.28 ns)
 mean                 17.39 ns   (16.77 ns .. 18.04 ns)
 std dev              2.134 ns   (1.872 ns .. 2.729 ns)
 variance introduced by outliers: 95% (severely inflated)
-
-Benchmark morphism-zoo-bench: FINISH
-Completed 2 action(s).
