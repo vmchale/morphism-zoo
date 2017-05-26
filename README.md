@@ -4,8 +4,8 @@
 ## Benchmarks
 
 This repository is for examples of recursion schemes, and benchmarks
-to compare them to other methods you might consider. You can find them under
-`bench8.0.txt` and `bench8.2.txt`.
+to compare them to other methods you might consider. You can find the results in the
+`results` directory.
 
 ### Running the Benchmarks
 
@@ -21,9 +21,20 @@ or, if you'd like a particular version of ghc:
  $ stack bench --stack-yaml stack-8.2.yaml
 ```
 
+To benchmark only one target:
+
+```bash
+ $ stack bench morphism-zoo:fib-bench
+```
+
 ### Conclusions
 
 As it happens, there's not a *huge* difference between the implementations, but
-some do stand out as bad. Recursion schemes remain the fastest, but only for ghc
-8.0.2. Moreover, other methods gain some of the speed back when they are allowed
-to use multiple threads.
+some do stand out as bad. GHC 8.0.2 has trouble with some of the optimizations,
+but if you upgrade to GHC 8.2.0 you shouldn't have as much trouble writing good
+code.
+
+*However* (and some may disagree with me on this), it is true that recursion
+schemes give you a bulletproof way to make fast code. Pattern matching is also
+great, but it a) can go wrong and b) kind of defeats the purpose of functional
+programming (higher-order functions).
