@@ -1,9 +1,13 @@
 import Test.Hspec
 import Suffix
 import Test.QuickCheck
+import Fib
 
 main :: IO ()
 main = hspec $ do
+    describe "fib" $ do
+        parallel $ it "gives fibonacci numbers" $ 
+            fib 10 `shouldBe` 89
     describe "suffix" $ do
         parallel $ it "returns the suffixes of a list" $ do
             suffix "tails" `shouldBe` ["ails","ils","ls","s"]

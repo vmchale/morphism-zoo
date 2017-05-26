@@ -7,10 +7,6 @@ packages:
        commit: 0b22c9825ef79c1ee41d2f19e7c997f5cdc93494
  - extra-dep: true
    location:
-       git: https://github.com/acid-state/acid-state.git
-       commit: f44beb3a3fb96bf2c00b928c89ad5f9f5ce4b3cf
- - extra-dep: true
-   location:
        git: https://github.com/ekmett/semigroupoids.git
        commit: c3297f970658ae874db098190327ec742044a2e6
  - extra-dep: true

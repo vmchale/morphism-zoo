@@ -18,6 +18,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Suffix
+                     , Fib
   build-depends:       base >= 4.7 && < 5
                      , recursion-schemes
   default-language:    Haskell2010
@@ -33,10 +34,20 @@ test-suite morphism-zoo-test
   ghc-options:         -threaded
   default-language:    Haskell2010
 
-benchmark morphism-zoo-bench
+benchmark suffix-bench
   type:                exitcode-stdio-1.0
   hs-source-dirs:      bench
-  main-is:             Bench.hs
+  main-is:             SuffixBench.hs
+  build-depends:       base
+                     , morphism-zoo
+                     , criterion
+  ghc-options:         -O3 -threaded
+  default-language:    Haskell2010
+
+benchmark fib-bench
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      bench
+  main-is:             FibBench.hs
   build-depends:       base
                      , morphism-zoo
                      , criterion
