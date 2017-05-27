@@ -38,3 +38,11 @@ schemes in order to write performant code.
 schemes give you a bulletproof way to make fast code. Pattern matching also
 works, but it a) can go wrong and b) kind of defeats the purpose of functional
 programming (higher-order functions).
+
+### Rust benchmarks
+
+I also have a similar library of rust benchmarks
+[here](https://github.com/vmchale/rust-suffix). Interestingly, Haskell actually
+performs *better* for the suffix function (though my rust code may be
+implemented wrong). However, rust far exceeds Haskell at the fibonacci
+benchmark.
