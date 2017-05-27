@@ -38,4 +38,14 @@ main = do
                       , bench "suffix (functoriality)" $ nf suffixFunctor longString
                       , bench "suffix (pattern matching done right)" $ nf suffixPattern4 longString
                       , bench "suffix (hylophorphism)" $ nf suffixHylo longString ]
+                , bgroup "suffixes-extra-long"
+                      [ bench "suffix (paramorphism)" $ nf suffix extraLongString
+                      , bench "suffix (pattern matching)" $ nf suffixPattern extraLongString
+                      , bench "suffix (pattern matching v2)" $ nf suffixPattern2 extraLongString
+                      , bench "suffix (pattern matching v3)" $ nf suffixPattern3 extraLongString
+                      , bench "suffix (list comprehension)" $ nf suffixList extraLongString
+                      , bench "suffix (zipper)" $ nf suffixList extraLongString
+                      , bench "suffix (functoriality)" $ nf suffixFunctor extraLongString
+                      , bench "suffix (pattern matching done right)" $ nf suffixPattern4 extraLongString
+                      , bench "suffix (hylophorphism)" $ nf suffixHylo extraLongString ]
                 ]
