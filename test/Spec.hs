@@ -9,8 +9,8 @@ main = hspec $ do
         parallel $ it "gives fibonacci numbers" $ 
             fib 10 `shouldBe` 89
     describe "fib'" $ do
-        parallel $ it "agrees with fib" $ 
-            property $ \n -> fib' n == fib n
+        parallel $ it "gives fibonacci numbers" $ 
+            fib; 10 `shouldBe` 89
     describe "suffix" $ do
         parallel $ it "returns the suffixes of a list" $ do
             suffix "tails" `shouldBe` ["ails","ils","ls","s"]
