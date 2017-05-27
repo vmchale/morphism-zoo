@@ -1,0 +1,80 @@
+benchmarking fib/10
+time                 3.723 μs   (3.686 μs .. 3.763 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 3.709 μs   (3.692 μs .. 3.730 μs)
+std dev              61.03 ns   (47.24 ns .. 77.08 ns)
+variance introduced by outliers: 15% (moderately inflated)
+
+benchmarking fib/15
+time                 40.76 μs   (40.68 μs .. 40.85 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 40.93 μs   (40.79 μs .. 41.13 μs)
+std dev              603.4 ns   (376.9 ns .. 954.7 ns)
+
+benchmarking fib/20
+time                 462.9 μs   (458.4 μs .. 467.2 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 462.7 μs   (460.4 μs .. 465.0 μs)
+std dev              7.834 μs   (6.462 μs .. 9.542 μs)
+
+benchmarking fib'/10
+time                 3.984 μs   (3.821 μs .. 4.210 μs)
+                     0.989 R²   (0.981 R² .. 0.999 R²)
+mean                 3.883 μs   (3.821 μs .. 4.005 μs)
+std dev              265.8 ns   (153.5 ns .. 465.7 ns)
+variance introduced by outliers: 76% (severely inflated)
+
+benchmarking fib'/15
+time                 42.88 μs   (42.26 μs .. 43.76 μs)
+                     0.997 R²   (0.996 R² .. 0.999 R²)
+mean                 42.91 μs   (42.33 μs .. 43.60 μs)
+std dev              2.058 μs   (1.708 μs .. 2.464 μs)
+variance introduced by outliers: 54% (severely inflated)
+
+benchmarking fib'/20
+time                 461.6 μs   (458.1 μs .. 467.2 μs)
+                     0.999 R²   (0.998 R² .. 0.999 R²)
+mean                 474.3 μs   (470.7 μs .. 479.1 μs)
+std dev              15.14 μs   (11.94 μs .. 20.23 μs)
+variance introduced by outliers: 24% (moderately inflated)
+
+benchmarking fibInt/10
+time                 460.6 ns   (457.8 ns .. 464.2 ns)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 463.4 ns   (459.8 ns .. 467.3 ns)
+std dev              13.12 ns   (10.73 ns .. 16.76 ns)
+variance introduced by outliers: 40% (moderately inflated)
+
+benchmarking fibInt/15
+time                 5.025 μs   (4.982 μs .. 5.067 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 5.018 μs   (4.993 μs .. 5.047 μs)
+std dev              91.96 ns   (78.80 ns .. 108.0 ns)
+variance introduced by outliers: 18% (moderately inflated)
+
+benchmarking fibInt/20
+time                 55.77 μs   (55.40 μs .. 56.24 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 55.78 μs   (55.47 μs .. 56.14 μs)
+std dev              1.086 μs   (919.3 ns .. 1.304 μs)
+variance introduced by outliers: 15% (moderately inflated)
+
+benchmarking fibInt'/10
+time                 457.9 ns   (455.3 ns .. 460.9 ns)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 460.0 ns   (456.6 ns .. 463.3 ns)
+std dev              10.80 ns   (9.012 ns .. 12.58 ns)
+variance introduced by outliers: 31% (moderately inflated)
+
+benchmarking fibInt'/15
+time                 5.051 μs   (4.991 μs .. 5.131 μs)
+                     0.997 R²   (0.993 R² .. 1.000 R²)
+mean                 5.076 μs   (5.022 μs .. 5.231 μs)
+std dev              268.8 ns   (101.0 ns .. 558.3 ns)
+variance introduced by outliers: 65% (severely inflated)
+
+benchmarking fibInt'/20
+time                 55.17 μs   (54.90 μs .. 55.45 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 55.16 μs   (54.96 μs .. 55.42 μs)
+std dev              766.2 ns   (600.8 ns .. 1.009 μs)
