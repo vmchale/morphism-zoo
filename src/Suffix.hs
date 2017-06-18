@@ -16,7 +16,7 @@ module Suffix ( suffix
               , suffixPattern4
               ) where
 
-import Data.Functor.Foldable
+import           Data.Functor.Foldable
 
 -- | This uses a hylomorphism
 suffixHylo :: [a] -> [[a]]
@@ -43,7 +43,7 @@ suffix = para pseudoalgebra
 -- | This is not technically an F-algebra in the mathematical sense
 pseudoalgebra :: (Base [a]) ([a], [[a]]) -> [[a]]
 pseudoalgebra Nil        = mempty
-pseudoalgebra (Cons _ x) = uncurry go $ x
+pseudoalgebra (Cons _ x) = uncurry go x
     where go y@(x:xs) suffixes = y:suffixes
           go _ suffixes        = suffixes
 
@@ -63,7 +63,7 @@ suffixPattern2 x = curry (snd . go) x mempty
 -- to show the problem isn't if-branching.
 suffixPattern3 :: [a] -> [[a]]
 suffixPattern3 x = curry (snd . go) x mempty
-    where go ((x:[]), suffixes) = ([], suffixes)
+    where go ([x], suffixes)    = ([], suffixes)
           go ((x:xs), suffixes) = go (xs, suffixes ++ [xs])
 
 -- | This uses list comprehensions

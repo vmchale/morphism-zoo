@@ -1,23 +1,32 @@
-import Test.Hspec
-import Suffix
-import Test.QuickCheck
-import Fib
+import           Fib
+import           Suffix
+import           Test.Hspec
+import           Test.QuickCheck
 
 main :: IO ()
 main = hspec $ do
     describe "fib" $ do
-        parallel $ it "gives fibonacci numbers" $ 
+        parallel $ it "gives fibonacci numbers" $
             fib 10 `shouldBe` 89
     describe "fibPattern" $ do
-        parallel $ it "gives fibonacci numbers" $ 
+        parallel $ it "gives fibonacci numbers" $
             fib 10 `shouldBe` 89
     describe "suffix" $ do
         parallel $ it "returns the suffixes of a list" $ do
             suffix "tails" `shouldBe` ["ails","ils","ls","s"]
+        parallel $ it "works with unicode" $ do
+            suffix "ང་ན་ཡིན།" `shouldBe` -- FIXME this is bad grammar
+                 [ "\3851\3923\3851\3937\3954\3923\3853"
+                 , "\3923\3851\3937\3954\3923\3853"
+                 , "\3851\3937\3954\3923\3853"
+                 , "\3937\3954\3923\3853"
+                 , "\3954\3923\3853"
+                 , "\3923\3853"
+                 , "\3853"]
         parallel $ it "returns nothing for singletons" $ do
             property $ \x -> suffix (pure x :: String) `shouldBe` mempty
-        --parallel $ it "drops the first letter" $
-        --    property $ \x xs -> not $ ([x] :: String) `elem` (suffix (x:xs))
+        parallel $ it "drops the first letter" $
+            property $ \x xs -> (not $ ([x] :: String) `elem` (suffix (x:xs))) || xs == []
         parallel $ it "doesn't include the empty string" $
             property $ \s -> not $ "" `elem` suffix s
         parallel $ it "includes exerything aside from the first letter" $
