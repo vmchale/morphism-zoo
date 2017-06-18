@@ -18,8 +18,6 @@ def extra_long_string():
 
 if __name__ == '__main__':
 
-    print(suffixes(unicode_string()))
-
     seconds_small = timeit.timeit("suffixes(u\"tails\")", setup="from __main__ import suffixes\ngc.enable()", number=100000)
     print(str.format("{0:.4g}", seconds_small * 10), " μs")
 

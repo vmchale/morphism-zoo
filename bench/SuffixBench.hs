@@ -5,6 +5,9 @@ module Main where
 import Criterion.Main
 import Suffix
 
+shortString :: String
+shortString = "tails" 
+
 mediumString :: String
 mediumString = replicate 20 'a'
 
@@ -16,15 +19,15 @@ extraLongString = replicate 1000 'a'
 
 main = do
     defaultMain [ bgroup "suffixes-short"
-                      [ bench "suffix (paramorphism)" $ nf suffix "tails"
-                      , bench "suffix (pattern matching)" $ nf suffixPattern "tails"
-                      , bench "suffix (pattern matching v2)" $ nf suffixPattern2 "tails"
-                      , bench "suffix (pattern matching v3)" $ nf suffixPattern3 "tails"
-                      , bench "suffix (list comprehension)" $ nf suffixList "tails"
-                      , bench "suffix (zipper)" $ nf suffixZipper "tails"
-                      , bench "suffix (functoriality)" $ nf suffixFunctor "tails"
-                      , bench "suffix (pattern matching done right)" $ nf suffixPattern4 "tails"
-                      , bench "suffix (hylomorphism)" $ nf suffixHylo "tails" ]
+                      [ bench "suffix (paramorphism)" $ nf suffix shortString
+                      , bench "suffix (pattern matching)" $ nf suffixPattern shortString
+                      , bench "suffix (pattern matching v2)" $ nf suffixPattern2 shortString
+                      , bench "suffix (pattern matching v3)" $ nf suffixPattern3 shortString
+                      , bench "suffix (list comprehension)" $ nf suffixList shortString
+                      , bench "suffix (zipper)" $ nf suffixZipper shortString
+                      , bench "suffix (functoriality)" $ nf suffixFunctor shortString
+                      , bench "suffix (pattern matching done right)" $ nf suffixPattern4 shortString
+                      , bench "suffix (hylomorphism)" $ nf suffixHylo shortString ]
                 , bgroup "suffixes-medium"
                       [ bench "suffix (paramorphism)" $ nf suffix mediumString
                       , bench "suffix (pattern matching)" $ nf suffixPattern mediumString

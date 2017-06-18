@@ -21,15 +21,27 @@ pub mod functions {
     /// ```
     /// use rust_suffix::functions::*;
     ///
-    /// let v: Vec<String> = vec!["ails".to_string(),"ils".to_string(),"ls".to_string(),"s".to_string()];
+    /// let v: Vec<String> = vec!["ails".to_string()
+    ///     , "ils".to_string()
+    ///     , "ls".to_string()
+    ///     , "s".to_string()];
     /// let s = "tails".to_string();
     /// assert_eq!(v, suffix_vec(s))
     /// ```
     pub fn suffix_vec(s: String) -> Vec<String> {
+        // maybe use a zipper for one traversal?
         let mut vec = Vec::new();
         for i in 1..s.chars().count() {
-            let next = s.chars().skip(i).take(i-s.len()).collect();
+            let next = s.chars().skip(i).take(i - s.len()).collect();
             vec.push(next);
+        }
+        vec
+    }
+
+    pub fn suffix_vec_fast(s: &str) -> Vec<&str> {
+        let mut vec = Vec::new();
+        for (j, _) in s.char_indices().skip(1) {
+            vec.push(&s[j..]);
         }
         vec
     }
@@ -65,7 +77,7 @@ pub mod functions {
     /// ```
     pub fn fib_iterative(n: usize) -> i32 {
         let fib = Fib::new();
-        let v: Vec<i32> = fib.take(n+1).collect();
+        let v: Vec<i32> = fib.take(n + 1).collect();
         v[n]
     }
 
