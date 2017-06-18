@@ -26,7 +26,7 @@ main = hspec $ do
         parallel $ it "returns nothing for singletons" $ do
             property $ \x -> suffix (pure x :: String) `shouldBe` mempty
         parallel $ it "drops the first letter" $
-            property $ \x xs -> (not $ ([x] :: String) `elem` (suffix (x:xs))) || xs == []
+            property $ \x xs -> (not $ ([x] :: String) `elem` (suffix (x:xs))) || length xs <= 1 || x `elem` xs
         parallel $ it "doesn't include the empty string" $
             property $ \s -> not $ "" `elem` suffix s
         parallel $ it "includes exerything aside from the first letter" $
