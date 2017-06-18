@@ -28,22 +28,18 @@ pub mod functions {
     /// let s = "tails".to_string();
     /// assert_eq!(v, suffix_vec(s))
     /// ```
-    pub fn suffix_vec(s: String) -> Vec<String> {
-        // maybe use a zipper for one traversal?
+    pub fn suffix_vec(s: &str) -> Vec<String> {
         let mut vec = Vec::new();
+        for (j, _) in s.char_indices().skip(1) {
+            vec.push((&s[j..]).to_string());
+        }
+        vec
+        /*let mut vec = Vec::new();
         for i in 1..s.chars().count() {
             let next = s.chars().skip(i).take(i - s.len()).collect();
             vec.push(next);
         }
-        vec
-    }
-
-    pub fn suffix_vec_fast(s: &str) -> Vec<&str> {
-        let mut vec = Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push(&s[j..]);
-        }
-        vec
+        vec*/
     }
 
     struct Fib {
