@@ -96,25 +96,25 @@ pub mod functions {
         (1..v.len()).map(|i| v.get(i..).unwrap().to_owned()).collect()
     }
 
-    struct Fib {
-        curr: i32,
-        next: i32,
-    }
+    // struct Fib {
+    //     curr: i32,
+    //     next: i32,
+    // }
 
-    impl Iterator for Fib {
-        type Item = i32;
-        fn next(&mut self) -> Option<i32> {
-            let new_next = self.curr + self.next;
-            let new_curr = replace(&mut self.next, new_next);
-            Some(replace(&mut self.curr, new_curr))
-        }
-    }
+    // impl Iterator for Fib {
+    //     type Item = i32;
+    //     fn next(&mut self) -> Option<i32> {
+    //         let new_next = self.curr + self.next;
+    //         let new_curr = replace(&mut self.next, new_next);
+    //         Some(replace(&mut self.curr, new_curr))
+    //     }
+    // }
 
-    impl Fib {
-        fn new() -> Fib {
-            Fib { curr: 1, next: 1 }
-        }
-    }
+    // impl Fib {
+    //     fn new() -> Fib {
+    //         Fib { curr: 1, next: 1 }
+    //     }
+    // }
 
     /// this function computes the fibonacci sequence iteratively
     ///
@@ -126,9 +126,10 @@ pub mod functions {
     /// assert_eq!(89, fib_iterative(10))
     /// ```
     pub fn fib_iterative(n: usize) -> i32 {
-        let fib = Fib::new();
-        let v: Vec<i32> = fib.take(n + 1).collect();
-        v[n]
+        (0..n).fold((0,1), |curr,_| (curr.1, curr.0+curr.1)).1
+        // let fib = Fib::new();
+        // let v: Vec<i32> = fib.take(n + 1).collect();
+        // v[n]
     }
 
     /// this function computes the fibonacci sequence iteratively, to arbitrary precision
