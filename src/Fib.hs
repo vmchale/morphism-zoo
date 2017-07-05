@@ -8,8 +8,7 @@
 module Fib
     ( fib
     , fibPattern
-    , fibInt
-    , fibIntPattern
+    , fibBig
     ) where
 
 import Data.Functor.Foldable
@@ -30,21 +29,18 @@ coalgebra 0 = FixF 1
 coalgebra 1 = FixF 1
 coalgebra n = AddF (n-1) (n-2)
 
-fib :: Integer -> Integer
+fib :: Int -> Int
 fib = hylo algebra coalgebra
 
-fibInt :: Int -> Int
-fibInt = hylo algebra coalgebra
-
-fibIntPattern :: Int -> Int
-fibIntPattern 0 = 1
-fibIntPattern 1 = 1
-fibIntPattern n = fibIntPattern (n-1) + fibIntPattern (n-2)
-
-exec :: IO ()
-exec = print $ map fib [0..20]
-
-fibPattern :: Integer -> Integer
+fibPattern :: Int -> Int
 fibPattern 0 = 1
 fibPattern 1 = 1
 fibPattern n = fibPattern (n-1) + fibPattern (n-2)
+
+fibBig :: Integer -> Integer
+fibBig = hylo algebra coalgebra
+
+--fibBig :: Integer -> Integer
+--fibBig 0 = 1
+--fibBig 1 = 1
+--fibBig n = fibBigPattern (n-1) + fibBigPattern (n-2)

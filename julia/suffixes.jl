@@ -1,5 +1,3 @@
-Pkg.add("BenchmarkTools")
-
 using BenchmarkTools
 
 function suffixes(s)

@@ -38,9 +38,36 @@ fn bench_suffix(b: &mut Bencher) {
 }
 
 #[bench]
+fn bench_suffix_ref(b: &mut Bencher) {
+    let s = "tails".to_string();
+    b.iter(|| suffix_vec_ref(s.as_str()));
+}
+/*
+#[bench]
+fn bench_suffix_generic(b: &mut Bencher) {
+    let s = "tails".to_string();
+    let s_vec: Vec<char> = s.chars().collect();
+    b.iter(|| suffix_iter(&s_vec));
+}*/
+
+#[bench]
 fn bench_suffix_medium(b: &mut Bencher) {
     let medium_string: String = iter::repeat('a').take(20).collect();
     b.iter(|| suffix_vec(medium_string.as_str()));
+}
+
+/*
+#[bench]
+fn bench_medium_generic(b: &mut Bencher) {
+    let medium_string: String = iter::repeat('a').take(20).collect();
+    let medium_vec: Vec<char> = medium_string.chars().collect();
+    b.iter(|| suffix_iter(&medium_vec));
+}*/
+
+#[bench]
+fn bench_suffix_medium_unicode(b: &mut Bencher) {
+    let unicode_string = "བོད་སྐད་ལ་པདི་ག་ར་རེད།";
+    b.iter(|| suffix_vec(unicode_string));
 }
 
 #[bench]
@@ -49,11 +76,27 @@ fn bench_suffix_long(b: &mut Bencher) {
     b.iter(|| suffix_vec(long_string.as_str()));
 }
 
+/*
+#[bench]
+fn bench_suffix_long_generic(b: &mut Bencher) {
+    let long_string: String = iter::repeat('a').take(100).collect();
+    let long_vec: Vec<char> = long_string.chars().collect();
+    b.iter(|| suffix_iter(&long_vec));
+}*/
+
 #[bench]
 fn bench_suffix_extra_long(b: &mut Bencher) {
     let extra_long_string: String = iter::repeat('a').take(1000).collect();
     b.iter(|| suffix_vec(extra_long_string.as_str()));
 }
+
+/*
+#[bench]
+fn bench_suffix_extra_long_generic(b: &mut Bencher) {
+    let extra_long_string: String = iter::repeat('a').take(1000).collect();
+    let extra_long_vec: Vec<char> = extra_long_string.chars().collect();
+    b.iter(|| suffix_iter(&extra_long_vec));
+}*/
 
 // this one doesn't need any special considerations
 #[bench]

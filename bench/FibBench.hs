@@ -12,12 +12,8 @@ main =
                       [ bench "10" $ nf fibPattern 10 
                       , bench "15" $ nf fibPattern 15
                       , bench "20" $ nf fibPattern 20 ]
-                , bgroup "fibInt (hylomorphism + small ints)"
-                      [ bench "10" $ nf fibInt 10 
-                      , bench "15" $ nf fibInt 15
-                      , bench "20" $ nf fibInt 20 ]
-                , bgroup "fibInt (pattern matching + small ints)"
-                      [ bench "10" $ nf fibIntPattern 10 
-                      , bench "15" $ nf fibIntPattern 15
-                      , bench "20" $ nf fibIntPattern 20 ]
+                , bgroup "fib (big)"
+                      [ bench "10" $ nf fibBig 10 
+                      , bench "15" $ nf fibBig 15
+                      , bench "20" $ nf fibBig 20 ]
                 ]

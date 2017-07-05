@@ -1,4 +1,4 @@
-resolver: lts-8.18
+resolver: lts-8.19
 packages:
  - .
  - extra-dep: true
@@ -22,6 +22,9 @@ packages:
        git: http://github.com/dreixel/syb.git
        commit: f584ecd525179778063df2eb02dc6bbe406d7e75
 allow-newer: true
+flags:
+    morphism-zoo:
+        llvm: true
 ghc-options:
     tweet-hs: -fdiagnostics-color=always
 compiler: ghc-8.2.0.20170507
