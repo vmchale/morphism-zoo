@@ -38,7 +38,25 @@ fn bench_suffix(b: &mut Bencher) {
 }
 
 #[bench]
-fn bench_suffix_ref(b: &mut Bencher) {
+fn bench_suffix_cow(b: &mut Bencher) {
+    let s = "tails".to_string();
+    b.iter(|| suffix_vec_cow(s.as_str()));
+}
+
+#[bench]
+fn bench_suffix_ref_medium(b: &mut Bencher) {
+    let medium_string: String = iter::repeat('a').take(20).collect();
+    b.iter(|| suffix_vec_ref(medium_string.as_str()));
+}
+
+#[bench]
+fn bench_suffix_cow_medium(b: &mut Bencher) {
+    let medium_string: String = iter::repeat('a').take(20).collect();
+    b.iter(|| suffix_vec_cow(medium_string.as_str()));
+}
+
+#[bench]
+fn bench_suffix_ref_short(b: &mut Bencher) {
     let s = "tails".to_string();
     b.iter(|| suffix_vec_ref(s.as_str()));
 }
@@ -76,13 +94,13 @@ fn bench_suffix_long(b: &mut Bencher) {
     b.iter(|| suffix_vec(long_string.as_str()));
 }
 
-/*
+
 #[bench]
 fn bench_suffix_long_generic(b: &mut Bencher) {
     let long_string: String = iter::repeat('a').take(100).collect();
     let long_vec: Vec<char> = long_string.chars().collect();
     b.iter(|| suffix_iter(&long_vec));
-}*/
+}
 
 #[bench]
 fn bench_suffix_extra_long(b: &mut Bencher) {

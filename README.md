@@ -20,7 +20,7 @@ or, if you'd like a particular version of ghc:
 To benchmark only one target:
 
 ```bash
- $ stack bench morphism-zoo:suffix-bench
+ $ stack bench morphism-zoo:suffix-bench-long
 ```
 
 ### Conclusions
@@ -28,3 +28,32 @@ To benchmark only one target:
 Recursion schemes are faster sometimes, and pattern matching is faster other
 times. Hylomorphisms vs. paramorphisms will make a difference too. Benchmark it
 if you're curious!
+
+## Suffix Benchmarks
+
+To run the suffix benchmarks for Haskell, install [llvm
+3.9](http://releases.llvm.org/download.html). Then:
+
+```
+stack bench morphism-zoo:suffix-bench
+```
+
+To benchmark the Rust:
+
+```
+cd rust
+cargo bench
+```
+
+To benchmark the Python:
+
+```
+python python/python-suffix.py
+```
+
+To benchmark the Julia:
+
+```
+julia julia/init.jl
+julia suffixes.jl
+```
