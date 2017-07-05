@@ -93,12 +93,7 @@ pub mod functions {
     /// assert_eq!(suffix_iter(&v), result)
     /// ```
     pub fn suffix_iter<T: Clone>(v: &Vec<T>) -> Vec<Vec<T>> {
-        let mut vec = Vec::new();
-        let l = v.len();
-        for i in 1..l {
-            vec.push(v.get(i..).unwrap().to_owned());
-        }
-        vec
+        (1..v.len()).map(|i| v.get(i..).unwrap().to_owned()).collect()
     }
 
     struct Fib {
