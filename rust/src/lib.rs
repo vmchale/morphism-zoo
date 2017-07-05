@@ -32,19 +32,19 @@ pub mod functions {
     pub fn suffix_vec(s: &str) -> Vec<String> {
         s.char_indices()
             .skip(1)
-            .map(|x| (&s[(x.0)..]).to_string())
+            .map(|(j, _)| (&s[j..]).to_string())
             .collect()
     }
 
     pub fn suffix_vec_cow(s: &str) -> Vec<Cow<str>> {
         s.char_indices()
             .skip(1)
-            .map(|x| Cow::from(&s[(x.0)..]))
+            .map(|(j, _)| Cow::from(&s[j..]))
             .collect()
     }
 
     pub fn suffix_vec_ref(s: &str) -> Vec<&str> {
-        s.char_indices().skip(1).map(|x| &s[(x.0)..]).collect()
+        s.char_indices().skip(1).map(|(j, _)| &s[j..]).collect()
     }
 
     /// generic version of the above function
