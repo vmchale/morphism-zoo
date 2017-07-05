@@ -30,28 +30,21 @@ pub mod functions {
     /// assert_eq!(v, suffix_vec(s))
     /// ```
     pub fn suffix_vec(s: &str) -> Vec<String> {
-        //let mut vec = Vec::with_capacity(s.char_indices().count());// Vec::new();
-        let mut vec = Vec::new(); //with_capacity(s.char_indices().count());// Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push((&s[j..]).to_string());
-        }
-        vec
+        s.char_indices()
+            .skip(1)
+            .map(|x| (&s[(x.0)..]).to_string())
+            .collect()
     }
 
     pub fn suffix_vec_cow(s: &str) -> Vec<Cow<str>> {
-        let mut vec = Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push(Cow::from(&s[j..]));
-        }
-        vec
+        s.char_indices()
+            .skip(1)
+            .map(|x| Cow::from(&s[(x.0)..]))
+            .collect()
     }
 
     pub fn suffix_vec_ref(s: &str) -> Vec<&str> {
-        let mut vec = Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push(&s[j..]);
-        }
-        vec
+        s.char_indices().skip(1).map(|x| &s[(x.0)..]).collect()
     }
 
     /// generic version of the above function
