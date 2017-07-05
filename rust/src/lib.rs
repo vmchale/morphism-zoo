@@ -2,6 +2,7 @@
 
 extern crate num_bigint;
 extern crate num_traits;
+extern crate rand;
 
 pub use functions::*;
 

@@ -3,6 +3,11 @@
 #![allow(unused_imports)]
 extern crate test;
 
+extern crate rand;
+
+use rand::Rng;
+use rand::distributions::{IndependentSample, Range};
+
 use std::iter;
 use std::mem::replace;
 use test::test::Bencher;
@@ -119,7 +124,10 @@ fn bench_suffix_extra_long_generic(b: &mut Bencher) {
 // this one doesn't need any special considerations
 #[bench]
 fn bench_iterative_fib(b: &mut Bencher) {
-    b.iter(|| fib_iterative(15))
+    let between = Range::new(6, 7);
+    let mut rng = rand::thread_rng();
+    let val = between.ind_sample(&mut rng);
+    b.iter(|| fib_iterative(val))
 }
 
 // for comparison to Haskell.

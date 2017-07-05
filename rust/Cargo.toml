@@ -6,6 +6,7 @@ authors = ["Vanessa McHale vamchale@gmail.com"]
 [dependencies]
 num-bigint = "0.1"
 num-traits = "0.1"
+rand = "0.3"
 
 [profile.release]
 lto = true
