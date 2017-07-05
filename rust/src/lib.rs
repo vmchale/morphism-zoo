@@ -30,21 +30,54 @@ pub mod functions {
     /// assert_eq!(v, suffix_vec(s))
     /// ```
     pub fn suffix_vec(s: &str) -> Vec<String> {
-        s.char_indices()
-            .skip(1)
-            .map(|(j, _)| (&s[j..]).to_string())
-            .collect()
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push((&s[i - 1..]).to_string());
+        }
+        vec
     }
 
     pub fn suffix_vec_cow(s: &str) -> Vec<Cow<str>> {
-        s.char_indices()
-            .skip(1)
-            .map(|(j, _)| Cow::from(&s[j..]))
-            .collect()
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push(Cow::from(&s[i - 1..]));
+        }
+        vec
     }
 
     pub fn suffix_vec_ref(s: &str) -> Vec<&str> {
-        s.char_indices().skip(1).map(|(j, _)| &s[j..]).collect()
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push(&s[i - 1..]);
+        }
+        vec
     }
 
     /// generic version of the above function
