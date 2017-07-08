@@ -24,6 +24,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Suffix
                      , Fib
+                     , PlusMinus
   build-depends:       base >= 4.7 && < 5
                      , recursion-schemes
   default-language:    Haskell2010
@@ -67,6 +68,16 @@ benchmark fib-bench
   type:                exitcode-stdio-1.0
   hs-source-dirs:      bench
   main-is:             FibBench.hs
+  build-depends:       base
+                     , morphism-zoo
+                     , criterion
+  ghc-options:         -O2
+  default-language:    Haskell2010
+
+benchmark pm-bench
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      bench
+  main-is:             PlusMinusBench.hs
   build-depends:       base
                      , morphism-zoo
                      , criterion

@@ -2,9 +2,15 @@ import           Fib
 import           Suffix
 import           Test.Hspec
 import           Test.QuickCheck
+import PlusMinus
 
 main :: IO ()
 main = hspec $ do
+    describe "plusMinus" $ do
+        parallel $ it "should work" $
+            plusMinusInt [1,2,3] `shouldBe` -4
+        parallel $ it "should give the same results" $
+            property $ \x -> plusMinusInt (x :: [Int]) == plusMinusBoring x
     describe "fib" $ do
         parallel $ it "gives fibonacci numbers" $
             fib 10 `shouldBe` 89

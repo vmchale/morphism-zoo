@@ -17,6 +17,11 @@ module Suffix ( suffix
               ) where
 
 import           Data.Functor.Foldable
+import Control.Arrow
+
+-- | Just wanted this available somewhere
+mutu :: Recursive t => (Base t (b, a) -> b) -> (Base t (b, a) -> a) -> t -> a
+mutu f g = snd . cata (f &&& g)
 
 -- | This uses a hylomorphism
 suffixHylo :: [a] -> [[a]]
