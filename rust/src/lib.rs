@@ -2,6 +2,7 @@
 
 extern crate num_bigint;
 extern crate num_traits;
+extern crate rand;
 
 pub use functions::*;
 
@@ -30,26 +31,52 @@ pub mod functions {
     /// assert_eq!(v, suffix_vec(s))
     /// ```
     pub fn suffix_vec(s: &str) -> Vec<String> {
-        //let mut vec = Vec::with_capacity(s.char_indices().count());// Vec::new();
-        let mut vec = Vec::new(); //with_capacity(s.char_indices().count());// Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push((&s[j..]).to_string());
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push((&s[i - 1..]).to_string());
         }
         vec
     }
 
     pub fn suffix_vec_cow(s: &str) -> Vec<Cow<str>> {
-        let mut vec = Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push(Cow::from(&s[j..]));
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push(Cow::from(&s[i - 1..]));
         }
         vec
     }
 
     pub fn suffix_vec_ref(s: &str) -> Vec<&str> {
-        let mut vec = Vec::new();
-        for (j, _) in s.char_indices().skip(1) {
-            vec.push(&s[j..]);
+        let len = s.len();
+        let mut vec = Vec::with_capacity(len);
+        let mut i = 1;
+        'outer: while i < len {
+            while !s.is_char_boundary(i) {
+                i += 1;
+                if i >= len {
+                    break 'outer;
+                }
+            }
+            i += 1;
+            vec.push(&s[i - 1..]);
         }
         vec
     }
@@ -67,33 +94,28 @@ pub mod functions {
     /// assert_eq!(suffix_iter(&v), result)
     /// ```
     pub fn suffix_iter<T: Clone>(v: &Vec<T>) -> Vec<Vec<T>> {
-        let mut vec = Vec::new();
-        let l = v.len();
-        for i in 1..l {
-            vec.push(v.get(i..).unwrap().to_owned());
-        }
-        vec
+        (1..v.len()).map(|i| v.get(i..).unwrap().to_owned()).collect()
     }
 
-    struct Fib {
-        curr: i32,
-        next: i32,
-    }
+    // struct Fib {
+    //     curr: i32,
+    //     next: i32,
+    // }
 
-    impl Iterator for Fib {
-        type Item = i32;
-        fn next(&mut self) -> Option<i32> {
-            let new_next = self.curr + self.next;
-            let new_curr = replace(&mut self.next, new_next);
-            Some(replace(&mut self.curr, new_curr))
-        }
-    }
+    // impl Iterator for Fib {
+    //     type Item = i32;
+    //     fn next(&mut self) -> Option<i32> {
+    //         let new_next = self.curr + self.next;
+    //         let new_curr = replace(&mut self.next, new_next);
+    //         Some(replace(&mut self.curr, new_curr))
+    //     }
+    // }
 
-    impl Fib {
-        fn new() -> Fib {
-            Fib { curr: 1, next: 1 }
-        }
-    }
+    // impl Fib {
+    //     fn new() -> Fib {
+    //         Fib { curr: 1, next: 1 }
+    //     }
+    // }
 
     /// this function computes the fibonacci sequence iteratively
     ///
@@ -105,9 +127,10 @@ pub mod functions {
     /// assert_eq!(89, fib_iterative(10))
     /// ```
     pub fn fib_iterative(n: usize) -> i32 {
-        let fib = Fib::new();
-        let v: Vec<i32> = fib.take(n + 1).collect();
-        v[n]
+        (0..n).fold((0,1), |curr,_| (curr.1, curr.0+curr.1)).1
+        // let fib = Fib::new();
+        // let v: Vec<i32> = fib.take(n + 1).collect();
+        // v[n]
     }
 
     /// this function computes the fibonacci sequence iteratively, to arbitrary precision
